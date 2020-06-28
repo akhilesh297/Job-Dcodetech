@@ -381,13 +381,14 @@
                     <div class="row">
                         <div class="col-md-12 col-lg-12">
                             <div class="card">
-                                <div class="card-header ">
+                                <div class="card-header">
                                     <button type="button" class="btn btn-info  mt-2" data-toggle="modal"
-                                        data-target="#exampleModal3">
-                                        <i class="fa fa-pencil"></i>
-                                        Edit
+                                        data-target="#addQuiz">
+                                        <i class="fa fa-plus"></i>
+                                        Add Quiz
                                     </button>
-                                    <br>
+                                </div>
+                                <div class="card-header ">
                                     <div class="btn-group my-1">
                                         <button class="btn btn-info" type="button">Print</button>
                                         <button class="btn btn-info" type="button">Excel</button>
@@ -531,6 +532,66 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="modal fade" id="addQuiz" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="example-Modal3">Add Quiz</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="recipient-name" class="form-control-label">Topic Title:</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="recipient-name" class="form-control-label">Per Question Mark:</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="recipient-name" class="form-control-label">Quiz Time (in
+                                        minutes):</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="recipient-name" class="form-control-label">Select Round:</label>
+                                    <select class="form-control">
+                                        <option value="">Aptitude Test</option>
+                                        <option value="">Program Test</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="recipient-name" class="form-control-label">Minimum Passing
+                                        Percentage:</label>
+                                    <input type="text" class="form-control" id="recipient-name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message-text" class="form-control-label">Topics covered in this
+                                        quiz:</label>
+                                    <textarea class="form-control border-gray" id="message-text" rows="10"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Add</button>
                 </div>
             </div>
         </div>
