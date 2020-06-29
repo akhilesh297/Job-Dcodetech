@@ -40,15 +40,14 @@
     <link href="../assets/plugins/datatable/jquery.dataTables.min.css" rel="stylesheet" />
 
 
-    <!-- Slect2 css -->
-    <link href="../assets/plugins/select2/select2.min.css" rel="stylesheet" />
-
-
-
     <link href="../assets/plugins/fileuploads/css/dropify.css" rel="stylesheet" type="text/css" />
+    <!-- select2 Plugin -->
+    <link href="../assets/plugins/select2/select2.min.css" rel="stylesheet" />
 
     <!-- Custom scroll bar css-->
     <link href="../assets/plugins/scroll-bar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+
+    <link href="../assets/plugins/fileuploads/css/dropify.css" rel="stylesheet" type="text/css" />
 
     <!---Font icons-->
     <link href="../assets/css/icons.css" rel="stylesheet" />
@@ -56,6 +55,7 @@
     <!-- Color-Skins -->
     <link id="theme" rel="stylesheet" type="text/css" media="all"
         href="../assets/color-skins/color-skins/color10.css" />
+
 
     <link href="../assets/css/custom.css" rel="stylesheet" />
 </head>
@@ -335,7 +335,7 @@
                         </a>
                     </li>
                     <li class="slide">
-                        <a class="side-menu__item" href="questions.html">
+                        <a class="side-menu__item active" href="questions.html">
                             <i class="side-menu__icon fa fa-question-circle-o"></i>
                             <span class="side-menu__label">Questions</span>
                         </a>
@@ -376,10 +376,11 @@
             <div class="app-content">
                 <div class="side-app">
                     <div class="page-header">
-                        <h4 class="page-title">Quiz</h4>
+                        <h4 class="page-title">Questions / Aptitude</h4>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Quiz</li>
+                            <li class="breadcrumb-item " aria-current="page">Question</li>
+                            <li class="breadcrumb-item active" aria-current="page">Add Question</li>
                         </ol>
                     </div>
                     <div class="row">
@@ -387,9 +388,9 @@
                             <div class="card">
                                 <div class="card-header">
                                     <button type="button" class="btn btn-info  mt-2" data-toggle="modal"
-                                        data-target="#addQuiz">
+                                        data-target="#addQuestion">
                                         <i class="fa fa-plus"></i>
-                                        Add Quiz
+                                        Add Question
                                     </button>
                                 </div>
                                 <div class="card-header ">
@@ -407,13 +408,13 @@
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
-                                                    <th>Quiz Title</th>
-                                                    <th>Topics Covered</th>
-                                                    <th>Per Question Mark</th>
-                                                    <th>Time</th>
-                                                    <th>Minimum Percentage</th>
-                                                    <th>Created By </th>
-                                                    <th>Round</th>
+                                                    <th>Questions</th>
+                                                    <th>A-Option</th>
+                                                    <th>B-Option</th>
+                                                    <th>C-Option</th>
+                                                    <th>D-Option</th>
+                                                    <th>Created Answer </th>
+                                                    <th>Code Snippet</th>
                                                     <th>Actions</th>
                                                 </tr>
                                             </thead>
@@ -443,13 +444,13 @@
                                             <tfoot>
                                                 <tr>
                                                     <th>#</th>
-                                                    <th>Quiz Title</th>
-                                                    <th>Topics Covered</th>
-                                                    <th>Per Question Mark</th>
-                                                    <th>Time</th>
-                                                    <th>Minimum Percentage</th>
-                                                    <th>Created By </th>
-                                                    <th>Round</th>
+                                                    <th>Questions</th>
+                                                    <th>A-Option</th>
+                                                    <th>B-Option</th>
+                                                    <th>C-Option</th>
+                                                    <th>D-Option</th>
+                                                    <th>Created Answer </th>
+                                                    <th>Code Snippet</th>
                                                     <th>Actions</th>
                                                 </tr>
                                             </tfoot>
@@ -485,7 +486,7 @@
 
     <!-- Start modal -->
     <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="example-Modal3">Edit Quiz</h5>
@@ -498,37 +499,57 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="recipient-name" class="form-control-label">Topic Title:</label>
-                                    <input type="text" class="form-control" required>
+                                    <label class="col-form-label">Question</label>
+                                    <textarea class="form-control" name="example-textarea-input" rows="4"
+                                        placeholder="Please enter a question"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label for="recipient-name" class="form-control-label">Per Question Mark:</label>
-                                    <input type="text" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="recipient-name" class="form-control-label">Quiz Time (in
-                                        minutes):</label>
-                                    <input type="text" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="recipient-name" class="form-control-label">Select Round:</label>
-                                    <select class="form-control select2 custom-select">
-                                        <option value="">Aptitude Test</option>
-                                        <option value="">Program Test</option>
+                                    <label for="inputState" class="col-form-label">Correct Answer</label>
+                                    <select id="inputState" class="form-control select2 custom-select">
+                                        <option>Choose</option>
+                                        <option>A</option>
+                                        <option>B</option>
+                                        <option>C</option>
+                                        <option>D</option>
+
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="recipient-name" class="form-control-label">Minimum Passing
-                                        Percentage:</label>
-                                    <input type="text" class="form-control" id="recipient-name">
+                                    <label class="form-label" for="">A-Option</label>
+                                    <input type="text" class="form-control" placeholder="Enter Name">
                                 </div>
                                 <div class="form-group">
-                                    <label for="message-text" class="form-control-label">Topics covered in this
-                                        quiz:</label>
-                                    <textarea class="form-control border-gray" id="message-text" rows="10"></textarea>
+                                    <label class="form-label" for="">B-Option</label>
+                                    <input type="text" class="form-control" placeholder="Enter Name">
                                 </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="">C-Option</label>
+                                    <input type="text" class="form-control" placeholder="Enter Name">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="">D-Option</label>
+                                    <input type="text" class="form-control" placeholder="Enter Name">
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="col-form-label">Code Snippet</label>
+                                    <textarea class="form-control" name="example-textarea-input" rows="6"
+                                        placeholder="Please enter a Code"></textarea>
+                                </div>
+
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="col-form-label">Add Image</label>
+                                    <input type="file" class="dropify" data-height="145" />
+                                </div>
+
                             </div>
                         </div>
                     </form>
@@ -544,8 +565,8 @@
 
 
 
-    <div class="modal fade" id="addQuiz" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+    <div class="modal fade" id="addQuestion" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="example-Modal3">Add Quiz</h5>
@@ -558,37 +579,57 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="recipient-name" class="form-control-label">Topic Title:</label>
-                                    <input type="text" class="form-control" required>
+                                    <label class="col-form-label">Question</label>
+                                    <textarea class="form-control" name="example-textarea-input" rows="4"
+                                        placeholder="Please enter a question"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label for="recipient-name" class="form-control-label">Per Question Mark:</label>
-                                    <input type="text" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="recipient-name" class="form-control-label">Quiz Time (in
-                                        minutes):</label>
-                                    <input type="text" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="recipient-name" class="form-control-label">Select Round:</label>
-                                    <select class="form-control  select2 custom-select">
-                                        <option value="">Aptitude Test</option>
-                                        <option value="">Program Test</option>
+                                    <label for="inputState" class="col-form-label">Correct Answer</label>
+                                    <select id="inputState" class="form-control select2 custom-select">
+                                        <option>Choose</option>
+                                        <option>A</option>
+                                        <option>B</option>
+                                        <option>C</option>
+                                        <option>D</option>
+
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="recipient-name" class="form-control-label">Minimum Passing
-                                        Percentage:</label>
-                                    <input type="text" class="form-control" id="recipient-name">
+                                    <label class="form-label" for="">A-Option</label>
+                                    <input type="text" class="form-control" placeholder="Enter Name">
                                 </div>
                                 <div class="form-group">
-                                    <label for="message-text" class="form-control-label">Topics covered in this
-                                        quiz:</label>
-                                    <textarea class="form-control border-gray" id="message-text" rows="10"></textarea>
+                                    <label class="form-label" for="">B-Option</label>
+                                    <input type="text" class="form-control" placeholder="Enter Name">
                                 </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="">C-Option</label>
+                                    <input type="text" class="form-control" placeholder="Enter Name">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="">D-Option</label>
+                                    <input type="text" class="form-control" placeholder="Enter Name">
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="col-form-label">Code Snippet</label>
+                                    <textarea class="form-control" name="example-textarea-input" rows="6"
+                                        placeholder="Please enter a Code"></textarea>
+                                </div>
+
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="col-form-label">Add Image</label>
+                                    <input type="file" class="dropify" data-height="145" />
+                                </div>
+
                             </div>
                         </div>
                     </form>
@@ -627,13 +668,6 @@
     <!-- Select2 js -->
     <script src="../assets/plugins/select2/select2.full.min.js"></script>
 
-    <!-- Inline js -->
-    <script src="../assets/js/select2.js"></script>
-    <script src="../assets/js/formelements.js"></script>
-
-    <!-- file uploads js -->
-    <script src="../assets/plugins/fileuploads/js/dropify.js"></script>
-
     <!-- Custom scroll bar Js-->
     <script src="../assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js"></script>
 
@@ -642,6 +676,12 @@
     <script src="../assets/plugins/counters/waypoints.min.js"></script>
     <script src="../assets/plugins/counters/numeric-counter.js"></script>
 
+    <!-- Inline js -->
+    <script src="../assets/js/select2.js"></script>
+    <script src="../assets/js/formelements.js"></script>
+
+    <!-- file uploads js -->
+    <script src="../assets/plugins/fileuploads/js/dropify.js"></script>
 
     <!-- Custom Js-->
     <script src="../assets/js/admin-custom.js"></script>

@@ -20,13 +20,12 @@
     <title>JobDcodetech</title>
     <link rel="stylesheet" href="../assets/fonts/fonts/font-awesome.min.css">
 
-    <link href="../assets/plugins/sweet-alert/sweetalert.css" rel="stylesheet" />
-    <!-- Bootstrap Css -->
-    <link href="../assets/plugins/bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet" />
-
     <!-- Sidemenu Css -->
     <link href="../assets/plugins/toggle-sidebar/sidemenu.css" rel="stylesheet" />
 
+
+    <!-- Bootstrap Css -->
+    <link href="../assets/plugins/bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Dashboard Css -->
     <link href="../assets/css/style.css" rel="stylesheet" />
@@ -35,17 +34,8 @@
     <!-- c3.js Charts Plugin -->
     <link href="../assets/plugins/charts-c3/c3-chart.css" rel="stylesheet" />
 
-    <!-- Data table css -->
-    <link href="../assets/plugins/datatable/dataTables.bootstrap4.min.css" rel="stylesheet" />
-    <link href="../assets/plugins/datatable/jquery.dataTables.min.css" rel="stylesheet" />
-
-
-    <!-- Slect2 css -->
-    <link href="../assets/plugins/select2/select2.min.css" rel="stylesheet" />
-
-
-
-    <link href="../assets/plugins/fileuploads/css/dropify.css" rel="stylesheet" type="text/css" />
+    <!-- Morris.js Charts Plugin -->
+    <link href="../assets/plugins/morris/morris.css" rel="stylesheet" />
 
     <!-- Custom scroll bar css-->
     <link href="../assets/plugins/scroll-bar/jquery.mCustomScrollbar.css" rel="stylesheet" />
@@ -56,7 +46,6 @@
     <!-- Color-Skins -->
     <link id="theme" rel="stylesheet" type="text/css" media="all"
         href="../assets/color-skins/color-skins/color10.css" />
-
     <link href="../assets/css/custom.css" rel="stylesheet" />
 </head>
 
@@ -376,92 +365,65 @@
             <div class="app-content">
                 <div class="side-app">
                     <div class="page-header">
-                        <h4 class="page-title">Quiz</h4>
+                        <h4 class="page-title">Student Report</h4>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Quiz</li>
+                            <li class="breadcrumb-item active" aria-current="page">Report</li>
                         </ol>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12 col-lg-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <button type="button" class="btn btn-info  mt-2" data-toggle="modal"
-                                        data-target="#addQuiz">
-                                        <i class="fa fa-plus"></i>
-                                        Add Quiz
-                                    </button>
-                                </div>
-                                <div class="card-header ">
-                                    <div class="btn-group my-1">
-                                        <button class="btn btn-info" type="button">Print</button>
-                                        <button class="btn btn-info" type="button">Excel</button>
-                                        <button class="btn btn-info" type="button">Csv</button>
 
-                                    </div>
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-6 ">
+                            <div class="card">
+                                <div class="card-status bg-blue br-tr-7 br-tl-7"></div>
+                                <div class="card-header">
+                                    <h3 class="card-title">Aptitude</h3>
 
                                 </div>
                                 <div class="card-body">
-                                    <div class="table-responsive">
-                                        <table id="example2" class="hover table-bordered border-top-0 border-bottom-0">
-                                            <thead>
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>Quiz Title</th>
-                                                    <th>Topics Covered</th>
-                                                    <th>Per Question Mark</th>
-                                                    <th>Time</th>
-                                                    <th>Minimum Percentage</th>
-                                                    <th>Created By </th>
-                                                    <th>Round</th>
-                                                    <th>Actions</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Dcodetech</td>
-                                                    <td>HTML</td>
-                                                    <td>20</td>
-                                                    <td>30 mins </td>
-                                                    <td>78 % </td>
-                                                    <td>Admin</td>
-                                                    <td>Program Test </td>
-                                                    <td>
-                                                        <button type="button" class="btn btn-info btn-sm mt-2"
-                                                            data-toggle="modal" data-target="#exampleModal3">
-                                                            <i class="fa fa-pencil"></i>
-                                                            Edit
-                                                        </button>
-                                                        <button type='button' id="delete"
-                                                            class="btn btn-red btn-sm mt-2"><i class="fa fa-remove"></i>
-                                                            Delete
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>Quiz Title</th>
-                                                    <th>Topics Covered</th>
-                                                    <th>Per Question Mark</th>
-                                                    <th>Time</th>
-                                                    <th>Minimum Percentage</th>
-                                                    <th>Created By </th>
-                                                    <th>Round</th>
-                                                    <th>Actions</th>
-                                                </tr>
-                                            </tfoot>
-                                        </table>
+                                    <ul class="list-group border-0">
+                                        <li class="list-group-item">
+                                            Per Question Mark
+                                            <span class="badgetext badge badge-default badge-pill">5</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            Total Marks
+                                            <span class=" badgetext badge badge-default badge-pill">24</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            Total Questions
+                                            <span class=" badgetext badge badge-default badge-pill">4</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            Total Time
+                                            <span class=" badgetext badge badge-default badge-pill">32
+                                                Minutes</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            Created By
+                                            <span class=" badgetext badge badge-default badge-pill">Admin</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            Total students
+                                            <span class=" badgetext badge badge-default badge-pill">1</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            Total students Passed
+                                            <span class=" badgetext badge badge-default badge-pill">1</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            Round
+                                            <span class=" badgetext badge badge-default badge-pill">1</span>
+                                        </li>
 
-                                    </div>
+                                    </ul>
+                                    <a href="reportdetails.html" class="btn btn-info mt-3">Show Report</a>
+
                                 </div>
                             </div>
                         </div>
+
                     </div>
-
-
 
                 </div>
             </div>
@@ -481,158 +443,20 @@
         <!-- End Footer-->
     </div>
 
-
-
-    <!-- Start modal -->
-    <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="example-Modal3">Edit Quiz</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="recipient-name" class="form-control-label">Topic Title:</label>
-                                    <input type="text" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="recipient-name" class="form-control-label">Per Question Mark:</label>
-                                    <input type="text" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="recipient-name" class="form-control-label">Quiz Time (in
-                                        minutes):</label>
-                                    <input type="text" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="recipient-name" class="form-control-label">Select Round:</label>
-                                    <select class="form-control select2 custom-select">
-                                        <option value="">Aptitude Test</option>
-                                        <option value="">Program Test</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="recipient-name" class="form-control-label">Minimum Passing
-                                        Percentage:</label>
-                                    <input type="text" class="form-control" id="recipient-name">
-                                </div>
-                                <div class="form-group">
-                                    <label for="message-text" class="form-control-label">Topics covered in this
-                                        quiz:</label>
-                                    <textarea class="form-control border-gray" id="message-text" rows="10"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Update</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <div class="modal fade" id="addQuiz" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="example-Modal3">Add Quiz</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="recipient-name" class="form-control-label">Topic Title:</label>
-                                    <input type="text" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="recipient-name" class="form-control-label">Per Question Mark:</label>
-                                    <input type="text" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="recipient-name" class="form-control-label">Quiz Time (in
-                                        minutes):</label>
-                                    <input type="text" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="recipient-name" class="form-control-label">Select Round:</label>
-                                    <select class="form-control  select2 custom-select">
-                                        <option value="">Aptitude Test</option>
-                                        <option value="">Program Test</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="recipient-name" class="form-control-label">Minimum Passing
-                                        Percentage:</label>
-                                    <input type="text" class="form-control" id="recipient-name">
-                                </div>
-                                <div class="form-group">
-                                    <label for="message-text" class="form-control-label">Topics covered in this
-                                        quiz:</label>
-                                    <textarea class="form-control border-gray" id="message-text" rows="10"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Add</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Modal -->
-
-    <!-- Dashboard js -->
     <script src="../assets/js/vendors/jquery-3.2.1.min.js"></script>
     <script src="../assets/plugins/bootstrap-4.3.1-dist/js/popper.min.js"></script>
     <script src="../assets/plugins/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+    <script src="../assets/js/vendors/jquery.sparkline.min.js"></script>
     <script src="../assets/js/vendors/selectize.min.js"></script>
+    <script src="../assets/js/vendors/jquery.tablesorter.min.js"></script>
     <script src="../assets/js/vendors/circle-progress.min.js"></script>
     <script src="../assets/plugins/rating/jquery.rating-stars.js"></script>
-
-    <script src="../assets/js/popover.js"></script>
 
     <!-- Fullside-menu Js-->
     <script src="../assets/plugins/toggle-sidebar/sidemenu.js"></script>
 
-    <!-- Sweet alert Plugin -->
-    <script src="../assets/plugins/sweet-alert/sweetalert.min.js"></script>
-    <script src="../assets/js/sweet-alert.js"></script>
 
-    <!-- Data tables -->
-    <script src="../assets/plugins/datatable/jquery.dataTables.min.js"></script>
-    <script src="../assets/plugins/datatable/dataTables.bootstrap4.min.js"></script>
-    <script src="../assets/js/datatable.js"></script>
 
-    <!-- Select2 js -->
-    <script src="../assets/plugins/select2/select2.full.min.js"></script>
-
-    <!-- Inline js -->
-    <script src="../assets/js/select2.js"></script>
-    <script src="../assets/js/formelements.js"></script>
-
-    <!-- file uploads js -->
-    <script src="../assets/plugins/fileuploads/js/dropify.js"></script>
 
     <!-- Custom scroll bar Js-->
     <script src="../assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js"></script>
@@ -643,8 +467,13 @@
     <script src="../assets/plugins/counters/numeric-counter.js"></script>
 
 
+
+
+
     <!-- Custom Js-->
     <script src="../assets/js/admin-custom.js"></script>
+
+
 
 </body>
 
